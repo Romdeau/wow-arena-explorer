@@ -1,0 +1,77 @@
+<%= form_for(@player) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% @player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ranking %><br>
+    <%= f.number_field :ranking %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :realmId %><br>
+    <%= f.number_field :realmId %>
+  </div>
+  <div class="field">
+    <%= f.label :realmName %><br>
+    <%= f.text_field :realmName %>
+  </div>
+  <div class="field">
+    <%= f.label :realmSlug %><br>
+    <%= f.text_field :realmSlug %>
+  </div>
+  <div class="field">
+    <%= f.label :raceId %><br>
+    <%= f.number_field :raceId %>
+  </div>
+  <div class="field">
+    <%= f.label :classId %><br>
+    <%= f.number_field :classId %>
+  </div>
+  <div class="field">
+    <%= f.label :specId %><br>
+    <%= f.number_field :specId %>
+  </div>
+  <div class="field">
+    <%= f.label :factionId %><br>
+    <%= f.number_field :factionId %>
+  </div>
+  <div class="field">
+    <%= f.label :genderId %><br>
+    <%= f.number_field :genderId %>
+  </div>
+  <div class="field">
+    <%= f.label :seasonWins %><br>
+    <%= f.number_field :seasonWins %>
+  </div>
+  <div class="field">
+    <%= f.label :seasonLosses %><br>
+    <%= f.number_field :seasonLosses %>
+  </div>
+  <div class="field">
+    <%= f.label :weeklyWins %><br>
+    <%= f.number_field :weeklyWins %>
+  </div>
+  <div class="field">
+    <%= f.label :weeklyLosses %><br>
+    <%= f.number_field :weeklyLosses %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

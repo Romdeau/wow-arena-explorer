@@ -1,0 +1,1 @@
+json.extract! @player, :id, :ranking, :rating, :name, :realmId, :realmName, :realmSlug, :raceId, :classId, :specId, :factionId, :genderId, :seasonWins, :seasonLosses, :weeklyWins, :weeklyLosses, :created_at, :updated_at

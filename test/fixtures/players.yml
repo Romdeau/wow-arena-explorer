@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ranking: 1
+  rating: 1
+  name: MyString
+  realmId: 1
+  realmName: MyString
+  realmSlug: MyString
+  raceId: 1
+  classId: 1
+  specId: 1
+  factionId: 1
+  genderId: 1
+  seasonWins: 1
+  seasonLosses: 1
+  weeklyWins: 1
+  weeklyLosses: 1
+
+two:
+  ranking: 1
+  rating: 1
+  name: MyString
+  realmId: 1
+  realmName: MyString
+  realmSlug: MyString
+  raceId: 1
+  classId: 1
+  specId: 1
+  factionId: 1
+  genderId: 1
+  seasonWins: 1
+  seasonLosses: 1
+  weeklyWins: 1
+  weeklyLosses: 1

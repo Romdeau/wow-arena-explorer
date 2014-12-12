@@ -1,0 +1,71 @@
+<h1>Listing players</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ranking</th>
+      <th>Rating</th>
+      <th>Name</th>
+      <th>Realm</th>
+      <th>Race</th>
+      <th>Class</th>
+      <th>Faction</th>
+      <th>Gender</th>
+      <th>Season</th>
+      <th>Season %</th>
+      <th>Weekly</th>
+      <th>Weekly %</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.ranking %></td>
+        <td><%= player.rating %></td>
+        <td><%= player.name %></td>
+        <td><%= player.realmName %></td>
+        <td><%= format_race(player) %></td>
+        <td><%= format_spec(player) %></td>
+        <td>
+          <% if player.factionId == 0 %>
+            A
+          <% else %>
+            H
+          <% end %>
+        </td>
+        <td><%= player.genderId %></td>
+        <td><%= player.seasonWins %>/<%= player.seasonLosses %></td>
+        <td>
+          <% if player.seasonLosses == 0 and player.seasonWins > 0 %>
+          100%
+          <% elsif player.seasonWins == 0 %>
+          0%
+          <% else %>
+          <%= "%.1f" % (100*((player.seasonWins.to_f) / (player.seasonWins.to_f + player.seasonLosses.to_f))) %>%
+          <% end %>
+        </td>
+        <td>
+          <%= player.weeklyWins %>/<%= player.weeklyLosses %>
+        </td>
+        <td>
+          <% if player.weeklyLosses == 0 and player.weeklyWins > 0 %>
+            100%
+          <% elsif player.weeklyWins == 0 %>
+            0%
+          <% else %>
+            <%= "%.1f" % (100*((player.weeklyWins.to_f) / (player.weeklyWins.to_f + player.weeklyLosses.to_f))) %>%
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', player %></td>
+        <td><%= link_to 'Edit', edit_player_path(player) %></td>
+        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Player', new_player_path %>
